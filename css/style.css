@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Muli|Open+Sans:400i');
+@import url('https://fonts.googleapis.com/css?family=Secular+One|Suez+One');
 
 html {
-	font-family: 'Muli', sans-serif;
+	font-family: 'Suez One', serif;
 	font-size: 16px;
 }
 
@@ -28,6 +28,7 @@ body {
 	max-width: 500px;
 	padding: 1rem;
 	overflow: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .quote {
@@ -42,7 +43,7 @@ body {
 
 .author {
 	display: block;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Secular One','Open Sans', sans-serif;
 	text-align: right;
 	font-size: 1rem;
 	font-style: italic;
@@ -53,21 +54,26 @@ body {
 #tweetQuote {
 	display: flex;
 	float:left;
-	font-size: 2rem;
+	font-size: 2.3rem;
 	padding: 0;
-	margin: 0 0 1rem 1rem;
+	margin: 0 0 1rem 1.2rem;
 }
-
-a, a:visited, a:hover, a:active {
-  color: inherit;
-	}
 
 #renew {
 	display:flex;
 	float : right;
-	font-size: 2rem;
+	font-size: 2.3rem;
 	padding: 0;
-	margin: 0 1rem 1rem 0;
+	margin: 0 1.2rem 1rem 0;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  padding: 0;
+	}
+
+svg, .svg-inline--fa {
+	vertical-align: 0;
 }
 
 #loren {
