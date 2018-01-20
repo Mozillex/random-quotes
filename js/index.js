@@ -1,29 +1,16 @@
 var renew = document.querySelector('#renew');
 var tweetQuote = document.querySelector('#tweetQuote');
-
-
 var currentQuote, currentAuthor, currentTweet;
-// var loren = document.querySelector('#loren');
 
-
-
-//getNew runs two other Fns: setColors and setCurQuote
+//getNew calls two other Fns: setColors and setCurQuote
 var getNew = function(){
 	setCurQuote();
-	console.log('Fx getNew called setCurQuote(); VAR CurrentQuote now set to:'+currentQuote);
 	setColors();
-	console.log('Fx setColors() called by getNew');
+	console.log('"getNew" Fx executed.');
 }
-
-// var tweetIt = function(){
-// 	console.log('VAR tweetIt invoked. Now calling Fx tweetIt()...');
-// 	tweetIt();
-// 	console.log('Fx tweetIt completed');
-// }
 
 //- - Fn SetColors - - randomizes and sets bg and quoteBox colors
 function setColors(){
-	console.log('Fx setColors() invoked...');
 	var colors = [//bg-color,color
 		['#CAB9EE','#FFF646'],
 		['#553A90','#D3BF47'],
@@ -42,12 +29,11 @@ function setColors(){
 	body.style.backgroundColor = randomizeC[0];
 	quoteBox.style.backgroundColor = randomizeC[1];
 	body.style.color = randomizeC[0];
-	console.log('Fx setColors now completed');
+	console.log('Bg and quoteBox colors set.');
 }
 
 //- - Fn setCurQuote - -randomizes and sets current author, quote AND * * currentTweet * *
 function setCurQuote(){
-	console.log('Fx setCurQuote() invoked...');
 	var qbQuote = document.querySelector('div.quote');
 	var qbAuthor = document.querySelector('div.author');
 	var quotes = [
@@ -76,35 +62,20 @@ function setCurQuote(){
 	qbQuote.innerText= currentQuote;
 	qbAuthor.innerText= " - "+currentAuthor;
 	currentTweet = currentQuote+" -"+currentAuthor;
-	console.log('setCurQuote now completed');
+	console.log('"currentQuote" updated.');
 }
 
 function tweetIt(){
-	console.log('Fx tweetIt() invoked...');
 	$("#tweetQuote").html("<a href='https://twitter.com/intent/tweet?text="+currentTweet+"&via=lorenmcclaflin&url=https%3A%2F%2Fcodepen.io%2FMozillex%2Ffull%2FqpoQpG&2F&hashtags=100DaysOfCode,freeCodeCamp,SCCodes&related=@lorenmcclaflin,@sc_codes,@freecodecamp'><i class='fab fa-twitter-square'></i></a>");
-	console.log('Fx tweetIt now comleted.');
+	console.log('Fx "tweetIt" comleted.');
 }
 
-
-//getNew();
-//tweetIt();
-
-
-
-// and, add these event listeners once the document has loaded...
+// Set initial quote and colors, add event listeners, and animate "created by...":
 $(document).ready(function(){
-	console.log('Document now ready; calling Fx getNew()...');
 	getNew();
 	renew.addEventListener('click',getNew);
-	console.log('Fx getNew completed and event listener added to  "renew" button.');
 	tweetQuote.innerHTML = "<a href='https://twitter.com/intent/tweet?text="+currentTweet+"&via=lorenmcclaflin&url=https%3A%2F%2Fcodepen.io%2FMozillex%2Ffull%2FqpoQpG&2F&hashtags=100DaysOfCode,freeCodeCamp,SCCodes&related=@lorenmcclaflin,@sc_codes,@freecodecamp'><i class='fab fa-twitter-square'></i></a>";
-	console.log("added innerHTML to ID tweetQuote.");
-
-
-
 	tweetQuote.addEventListener('click',tweetIt);
-	console.log('Event listeners addition has completed.');
 	$("#loren").fadeIn(500).delay(2000).animate({fontSize: "0.8rem",opacity:".5"},1500).animate({fontSize: "0.5rem",opacity:"1"}, 1000);
-	console.log('All doc.ready operations completed.');
-
+	console.log('Document ready; "renew" and "tweet" buttons active.');
 });
