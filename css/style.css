@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Muli|Open+Sans:400i');
+
+html {
+	font-family: 'Muli', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	height: 100vh;
+/* 	width: 100vw; */
+	display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+		padding: 1rem;
+}
+
+.container {
+	position: relative;
+}
+
+#quoteBox {
+	display: block;
+	position: relative;
+	border-radius: 6px;
+	max-width: 500px;
+	padding: 1rem;
+	overflow: auto;
+}
+
+.quote {
+	display: block;
+	text-align: left;
+	font-size: 2rem;
+	font-style: bold;
+	line-height: 1.2;
+	margin-top: 1rem;
+	padding: 0rem 0.5rem 1rem 3rem;
+}
+
+.author {
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	text-align: right;
+	font-size: 1rem;
+	font-style: italic;
+	padding-right: 2rem;
+	margin-bottom: 1rem;
+}
+
+#tweetQuote {
+	display: flex;
+	float:left;
+	font-size: 2rem;
+	padding: 0;
+	margin: 0 0 1rem 1rem;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+	}
+
+#renew {
+	display:flex;
+	float : right;
+	font-size: 2rem;
+	padding: 0;
+	margin: 0 1rem 1rem 0;
+}
+
+#loren {
+	display: block;
+	font-family: courier, monospace, arial;
+	font-size: 0rem;
+	opacity: 0;
+	text-align: center;
+	transform: rotate(270deg);
+	position: absolute;
+		top:50%;
+		bottom: 50%;
+		left: -4rem;
+}
